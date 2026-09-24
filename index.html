@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Christian Dave C. Flores | Portfolio</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #f8fafc;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 17, 32, 0.95);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 8% 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    #12365c 0%,
+                    transparent 30%
+                ),
+                #0b1120;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hello {
+            color: #38bdf8;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        .primary:hover {
+            background: #7dd3fc;
+        }
+
+        .secondary {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .secondary:hover {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+
+        /* =========================
+           PROFILE CARD
+        ========================= */
+
+        .profile-card {
+            width: 300px;
+            height: 370px;
+
+            border: 1px solid #1e3a5f;
+            border-radius: 20px;
+
+            background: #111827;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            box-shadow:
+                0 0 50px rgba(56, 189, 248, 0.1);
+        }
+
+        .profile-circle {
+            width: 160px;
+            height: 160px;
+
+            border-radius: 50%;
+
+            border: 3px solid #38bdf8;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: #38bdf8;
+
+            margin-bottom: 20px;
+
+            font-weight: bold;
+
+            overflow: hidden;
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-card h3 {
+            font-size: 20px;
+        }
+
+        .profile-card p {
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #0f172a;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #94a3b8;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #111827;
+
+            border: 1px solid #1e293b;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+
+            margin: 0 auto 15px;
+
+            border-radius: 12px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            background: #1e293b;
+
+            color: #38bdf8;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #94a3b8;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background: #0f172a;
+        }
+
+        .project-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #111827;
+
+            border: 1px solid #1e293b;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            transition: 0.3s;
+
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+        }
+
+
+        /* =========================
+           PROJECT IMAGES
+        ========================= */
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+
+            object-fit: cover;
+
+            display: block;
+
+            border-radius: 10px;
+
+            margin-bottom: 20px;
+
+            border: 1px solid #1e3a5f;
+
+            background: #0b1120;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.02);
+        }
+
+
+        /* =========================
+           PROJECT INFORMATION
+        ========================= */
+
+        .project-number {
+            color: #38bdf8;
+
+            font-size: 13px;
+
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        .project-tags {
+            margin-top: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+
+            border: 1px solid #334155;
+
+            color: #7dd3fc;
+
+            padding: 5px 9px;
+
+            border-radius: 4px;
+
+            font-size: 11px;
+
+            margin: 3px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience {
+            background: #0b1120;
+        }
+
+        .experience-container {
+            max-width: 850px;
+
+            margin: auto;
+        }
+
+        .experience-card {
+            position: relative;
+
+            background: #111827;
+
+            border-left: 3px solid #38bdf8;
+
+            border-radius: 0 12px 12px 0;
+
+            padding: 30px;
+
+            margin-bottom: 25px;
+
+            transition: 0.3s;
+        }
+
+        .experience-card:hover {
+            transform: translateX(8px);
+            background: #162033;
+        }
+
+        .experience-date {
+            color: #38bdf8;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        .experience-card h3 {
+            font-size: 21px;
+
+            margin-bottom: 5px;
+        }
+
+        .experience-card h4 {
+            color: #64748b;
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+        .experience-card p {
+            color: #94a3b8;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            max-width: 700px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+        }
+
+        .email {
+            display: inline-block;
+
+            color: #38bdf8;
+
+            font-size: 20px;
+
+            text-decoration: none;
+
+            padding: 12px 20px;
+
+            border: 1px solid #38bdf8;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+        }
+
+        .email:hover {
+            background: #38bdf8;
+
+            color: #07111f;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            background: #070d19;
+
+            border-top: 1px solid #1e293b;
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+        footer span {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .skills-container {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .project-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+            }
+
+            .hero {
+                padding: 130px 5% 70px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .profile-card {
+                width: 260px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 220px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            My<span>Portfolio</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <div class="hello">
+                Hello, I'm
+            </div>
+
+            <h1>
+                Christian Dave C. Flores
+            </h1>
+
+            <h2>
+                BS Information Technology Student
+            </h2>
+
+            <p>
+                Welcome to my personal portfolio. I am an Information
+                Technology student passionate about programming,
+                web development, databases, and creating useful
+                digital solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE CARD -->
+
+        <div class="profile-card">
+
+            <div class="profile-circle">
+
+                <!--
+                    OPTIONAL PROFILE PHOTO
+
+                    Put your profile picture inside the images folder
+                    and change the filename below.
+
+                    Example:
+                    images/profile.jpg
+                -->
+
+                <img
+                    src="images/img.jpg.png"
+                    alt="Christian Flores">
+
+            </div>
+
+            <h3>
+                Christian Flores
+            </h3>
+
+            <p>
+                IT Student
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+
+            <h2>
+                About <span>Me</span>
+            </h2>
+
+            <p>
+                Get to know me
+            </p>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p>
+                My name is Christian Dave C. Flores, and I am a
+                Bachelor of Science in Information Technology student.
+                I am interested in learning how technology can be used
+                to solve problems and make everyday tasks easier.
+            </p>
+
+            <p>
+                Throughout my studies, I have been developing my
+                knowledge in programming, web development, databases,
+                and user interface design. I enjoy creating projects
+                that help me improve my technical and problem-solving
+                skills.
+            </p>
+
+            <p>
+                My goal is to continue improving my skills and gain
+                experience in the field of Information Technology.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>
+                My <span>Skills</span>
+            </h2>
+
+            <p>
+                Technologies and skills I am currently learning
+            </p>
+
+        </div>
+
+
+        <div class="skills-container">
+
+
+            <!-- HTML -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    HTML
+                </div>
+
+                <h3>
+                    HTML
+                </h3>
+
+                <p>
+                    Building the structure of websites.
+                </p>
+
+            </div>
+
+
+            <!-- CSS -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    CSS
+                </div>
+
+                <h3>
+                    CSS
+                </h3>
+
+                <p>
+                    Designing modern and responsive websites.
+                </p>
+
+            </div>
+
+
+            <!-- C++ -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    C++
+                </div>
+
+                <h3>
+                    C++
+                </h3>
+
+                <p>
+                    Developing programs and practicing algorithms.
+                </p>
+
+            </div>
+
+
+            <!-- C# -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    C#
+                </div>
+
+                <h3>
+                    C#
+                </h3>
+
+                <p>
+                    Building applications and practicing
+                    object-oriented programming.
+                </p>
+
+            </div>
+
+
+            <!-- MYSQL -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    SQL
+                </div>
+
+                <h3>
+                    MySQL
+                </h3>
+
+                <p>
+                    Working with databases and data management.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-title">
+
+            <h2>
+                My <span>Projects</span>
+            </h2>
+
+            <p>
+                Some projects I have worked on
+            </p>
+
+        </div>
+
+
+        <div class="project-container">
+
+
+            <!-- =========================
+                 PROJECT 1
+            ========================= -->
+
+            <div class="project-card">
+
+                <!-- PROJECT 1 IMAGE -->
+
+                <img
+                    src="images/Screenshot 2026-08-18 055810.png"
+                    alt="Personal Portfolio Project"
+                    class="project-image">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    Personal Portfolio
+                </h3>
+
+                <p>
+                    A responsive personal portfolio website created
+                    using HTML and CSS to showcase my skills,
+                    projects, and experience.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PROJECT 2
+            ========================= -->
+
+            <div class="project-card">
+
+                <!-- PROJECT 2 IMAGE -->
+
+                <img
+                    src="images/Screenshot 2026-08-18 055206.png"
+                    alt="Library Management System Project"
+                    class="project-image">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Library Management System
+                </h3>
+
+                <p>
+                    A simple system designed to manage
+                    library records.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        C#
+                    </span>
+
+                    <span class="tag">
+                        MySQL
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PROJECT 3
+            ========================= -->
+
+            <div class="project-card">
+
+                <!-- PROJECT 3 IMAGE -->
+
+                <img
+                    src="images/Screenshot 2026-08-18 055644.png"
+                    alt="Student Information System Project"
+                    class="project-image">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Student Information System
+                </h3>
+
+                <p>
+                    A student-focused system designed to organize
+                    student information and records.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        C++
+                    </span>
+
+                    <span class="tag">
+                        MySQL
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
+
+    <section class="experience" id="experience">
+
+        <div class="section-title">
+
+            <h2>
+                My <span>Experience</span>
+            </h2>
+
+            <p>
+                My learning and project experience
+            </p>
+
+        </div>
+
+
+        <div class="experience-container">
+
+
+            <!-- EXPERIENCE 1 -->
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    2025 — PRESENT
+                </div>
+
+                <h3>
+                    BS Information Technology Student
+                </h3>
+
+                <h4>
+                    Academic Experience
+                </h4>
+
+                <p>
+                    Developing my knowledge in programming, databases,
+                    web development, and information technology
+                    through different academic activities and
+                    school projects.
+                </p>
+
+            </div>
+
+
+            <!-- EXPERIENCE 2 -->
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    2025 — 2026
+                </div>
+
+                <h3>
+                    Programming I & II Projects
+                </h3>
+
+                <h4>
+                    Student Projects
+                </h4>
+
+                <p>
+                    Created programming projects using C++, C#,
+                    and MySQL. These projects helped me improve
+                    my coding, debugging, database, and
+                    problem-solving skills.
+                </p>
+
+            </div>
+
+
+            <!-- EXPERIENCE 3 -->
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    PRESENT
+                </div>
+
+                <h3>
+                    Web Development Learning
+                </h3>
+
+                <h4>
+                    Personal Development
+                </h4>
+
+                <p>
+                    Currently improving my skills in designing
+                    responsive websites and learning how to create
+                    clean and user-friendly web interfaces.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>
+                Contact <span>Me</span>
+            </h2>
+
+            <p>
+                Let's connect
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <p>
+                If you would like to contact me, feel free to
+                send me an email. I would be happy to connect
+                and discuss projects, ideas, or opportunities.
+            </p>
+
+            <a
+                class="email"
+                href="mailto:cdctfc@gmail.com">
+
+                cdctfc@gmail.com
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026
+
+        <span>
+            Christian Dave C. Flores
+        </span>
+
+        . All Rights Reserved.
+
+    </footer>
+
+
+</body>
+
+</html>
